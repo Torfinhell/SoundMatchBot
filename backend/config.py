@@ -28,8 +28,10 @@ class Settings(BaseModel):
     frontend: FrontendSettings
 
 def load_config():
-    # Load from root directory
+    # Load from root directory (parent of backend)
     config_path = Path(__file__).parent.parent / "config.yaml"
+    if not config_path.exists():
+        raise FileNotFoundError(f"Config file not found at {config_path}. Make sure config.yaml exists in the project root.")
     with open(config_path, "r") as f:
         data = yaml.safe_load(f)
     return Settings(**data)

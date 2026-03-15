@@ -1,5 +1,5 @@
 backend:
-  database_url: postgresql://postgres:password@localhost:5432/soundmatch
+  database_url: postgresql://soundmatch_user:your_password@localhost:5432/soundmatch
   redis_host: localhost
   redis_port: 6379
   n_clusters: 10
