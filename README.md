@@ -1,4 +1,26 @@
 # SoundMatchBot
-A bot that gives people the opportunity to find other people with similiar tastes in music
-# Running llm_council
-cd /home/torfinhell/Ml/DSP/SoundMatchBot/llm-council && source .venv/bin/activate && cd .. && python3 prompts/council_runner.py "Generate the complete code repository for SoundMatchBot based on all the provided documentation files. Include all necessary source code, configuration files, documentation, and setup instructions." --models openai/gpt-5.1 google/gemini-3-pro-preview anthropic/claude-sonnet-4.5 x-ai/grok-4 --files prompts/AI_example.md prompts/backend.md prompts/Create_Presenation.md prompts/Final_Prompt.md prompts/frontend.md prompts/llm_council_installation.md prompts/music_extraction.md prompts/readme_creation.md prompts/testing_and_metrics.mdprompts/frontend.md
+
+Match with users based on music taste and poll compatibility.
+
+## Setup
+
+1. **Database**: parameters in `config.yaml` require a running PostgreSQL (db: `soundmatch`) and Redis.
+2. **Backend**:
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   python -m scripts.init_db
+   uvicorn main:app --reload
+   ```
+3. **Telegram Bot**:
+   ```bash
+   cd frontend/telegram_bot
+   pip install -r requirements.txt
+   python main.py
+   ```
+4. **Web Dashboard**:
+   ```bash
+   cd frontend/web
+   npm install
+   npm run dev
+   ```

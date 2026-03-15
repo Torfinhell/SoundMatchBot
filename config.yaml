@@ -1,0 +1,18 @@
+backend:
+  database_url: postgresql://postgres:password@localhost:5432/soundmatch
+  redis_host: localhost
+  redis_port: 6379
+  n_clusters: 10
+  num_people_refilter: 50
+  admin_password: "super_secret_password"
+  faiss_index_path: ./data/faiss.index
+  embedding_dim: 50
+  cors_origins:
+    - http://localhost:5173
+
+bot:
+  token: "YOUR_TELEGRAM_BOT_TOKEN"
+  backend_url: http://localhost:8000
+
+frontend:
+  default_limit: 20
