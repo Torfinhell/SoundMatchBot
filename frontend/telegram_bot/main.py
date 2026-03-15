@@ -20,7 +20,7 @@ def main():
     
     # Admin Conversation
     conv_admin = ConversationHandler(
-        entry_points=[CallbackQueryHandler(admin_request_handler, pattern="^admin_request")],
+        entry_points=[CallbackQueryHandler(admin_request_handler, pattern="^menu_admin")],
         states={
             ASK_PASS: [MessageHandler(filters.TEXT & ~filters.COMMAND, admin_password_handler)]
         },
