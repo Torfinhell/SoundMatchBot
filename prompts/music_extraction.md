@@ -1,5 +1,13 @@
-In this file I will disclose 
-We will use model from repo https://github.com/spijkervet/CLMR
-To download audios from youtube playlist use sample_notebooks/yotube_music_extraction.ipynb
+# Music Feature Extraction
 
-To extract embeddings use sample_notebooks/music_extraction.ipynb
+**Audio Source**
+- Download YouTube playlists via:
+`sample_notebooks/youtube_music_extraction.ipynb`
+
+**Embeddings**
+- Extract using CLMR:
+`sample_notebooks/music_extraction.ipynb`
+
+**Storage**
+- Embeddings saved per user in FAISS
+- Metadata (author, title) saved in PostgreSQL
