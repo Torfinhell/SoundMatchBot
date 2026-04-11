@@ -4,9 +4,9 @@ from contextlib import asynccontextmanager
 import os
 
 try:
-    from .config import settings
-    from .routers import users, polls, admin, recommendations
-    from .faiss_index import faiss_index
+    from backend.config import settings
+    from backend.routers import users, polls, admin, recommendations
+    from backend.faiss_index import faiss_index
 except ImportError as e:
     print(f"Import error: {e}")
     print("Make sure you're running from the project root with: uvicorn backend.main:app --reload")

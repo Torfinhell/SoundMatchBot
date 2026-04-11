@@ -29,14 +29,15 @@ def main():
         print("Make sure you're running from the project root.")
         sys.exit(1)
 
-    # Change to backend directory for proper imports
-    os.chdir(backend_dir)
+    # Ensure we run uvicorn from the project root so "backend" is importable as a package
+    project_root = os.path.abspath(os.path.dirname(__file__))
 
-    # Run uvicorn
-    cmd = [sys.executable, '-m', 'uvicorn', 'main:app', '--reload', '--host', '0.0.0.0', '--port', '8000']
+    # Run uvicorn pointing to the package module
+    venv_python = os.path.join(project_root, '.venv', 'bin', 'python')
+    cmd = [venv_python, '-m', 'uvicorn', 'backend.main:app', '--reload', '--host', '0.0.0.0', '--port', '8000']
     print(f"Starting server with command: {' '.join(cmd)}")
     try:
-        subprocess.run(cmd)
+        subprocess.run(cmd, cwd=project_root)
     except KeyboardInterrupt:
         print("\nServer stopped.")
     except Exception as e:

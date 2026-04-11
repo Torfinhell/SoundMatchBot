@@ -1,9 +1,9 @@
 import numpy as np
 from sqlalchemy.orm import Session
-from ..models import User, PollAnswer
-from ..faiss_index import faiss_index
-from ..config import settings
-from .embedding import embedding_extractor
+from backend.models import User, PollAnswer
+from backend.faiss_index import faiss_index
+from backend.config import settings
+from backend.services.embedding import embedding_extractor
 
 class Matcher:
     def __init__(self, db: Session):

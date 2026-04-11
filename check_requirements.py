@@ -70,7 +70,8 @@ def check_dependencies():
         'httpx': 'httpx',
         'pyyaml': 'yaml',
         'psycopg2': 'psycopg2',
-        'redis': 'redis'
+        'redis': 'redis',
+        'torch': 'torch'
     }
     missing = []
     for pkg, import_name in required_imports.items():

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from ..database import get_db
-from ..services.matching import Matcher
+from backend.database import get_db
+from backend.services.matching import Matcher
 
 router = APIRouter(tags=["recommendations"])
 

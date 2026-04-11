@@ -9,3 +9,5 @@ faiss-cpu
 numpy
 httpx
 python-multipart
+torch
+onnxruntime

@@ -53,7 +53,16 @@ sudo systemctl start redis-server
 
 ### 3. Configuration
 
-Edit `config.yaml`:
+1) Copy and fill the `.env` file (this is the easiest way to store secrets):
+
+```bash
+cp .env.example .env
+# then edit .env and set TELEGRAM_BOT_TOKEN
+```
+
+The backend will read `TELEGRAM_BOT_TOKEN` from `.env` (or from the environment), so you **do not need to store it in `config.yaml`**.
+
+2) Configure the rest of the app via `config.yaml` (database, Redis, etc.):
 
 ```yaml
 backend:
@@ -64,8 +73,7 @@ backend:
   # ... other settings
 
 bot:
-  token: "YOUR_TELEGRAM_BOT_TOKEN"
-  # ... 
+  token: "YOUR_TELEGRAM_BOT_TOKEN"  # optional (overridden by .env)
 
 frontend:
   # ...

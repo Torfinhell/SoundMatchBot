@@ -8,7 +8,7 @@ import torchaudio
 import urllib.request
 import onnxruntime as ort
 import numpy as np
-from ..config import settings
+from backend.config import settings
 
 
 class EmbeddingExtractor:
